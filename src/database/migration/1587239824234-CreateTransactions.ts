@@ -37,6 +37,8 @@ export default class CreateTransactions1587239824234
             name: 'value',
             type: 'decimal',
             isNullable: false,
+            precision: 10,
+            scale: 2,
           },
           {
             name: 'category_id',
