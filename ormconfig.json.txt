@@ -1,17 +1,17 @@
 {
   "type": "postgres",
-  "host": "192.168.99.100",
+  "host": "localhost",
   "port": 5432,
   "username": "postgres",
-  "password": "docker",
+  "password": "pgsql",
   "database": "gostack_desafio06",
   "entities": [
     "./src/models/*.ts"
   ],
   "migrations": [
-    "./src/database/migrations/*.ts"
+      "./src/database/migration/*.ts"
   ],
   "cli": {
-    "migrationsDir": "./src/database/migrations"
+      "migrationsDir": "./src/database/migration"
   }
 }

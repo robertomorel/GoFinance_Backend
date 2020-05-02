@@ -20,7 +20,7 @@ transactionsRouter.get('/', async (request, response) => {
   const transactions = transactionsRepository.format(transactionsComplete);
   */
   const transactions = await transactionsRepository.find({
-    select: ['id', 'title', 'type', 'value'],
+    /* select: ['id', 'title', 'type', 'value'], */
     relations: ['category'],
   });
   // const balance = await transactionsRepository.getBalance(transactions);
@@ -56,6 +56,8 @@ transactionsRouter.post(
   async (request, response) => {
     const importTransactionsService = new ImportTransactionsService();
     const filePath = request.file.path;
+    console.log(request.file);
+    console.log(filePath);
     const transactions = await importTransactionsService.execute({ filePath });
     return response.json(transactions);
   },
